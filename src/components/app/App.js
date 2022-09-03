@@ -7,8 +7,6 @@ import Spinner from '../spinner/Spinner';
 const Trending = lazy(() => import('../trending/Trending'));
 const Movies = lazy(() => import('../movies/Movies'));
 const MovieInfo = lazy(() => import('../movieInfo/MovieInfo'));
-const Cast = lazy(() => import('../cast/Cast'));
-const Reviews = lazy(() => import('../reviews/Reviews'));
 
 const App = () => {
 	return (

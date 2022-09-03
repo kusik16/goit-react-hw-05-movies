@@ -21,6 +21,7 @@ const MovieInfo = () => {
 		getMovieDetails(movieId).then(res => {
 			setMovieInfo(res);
 		});
+		// eslint-disable-next-line
 	}, []);
 
 	return (

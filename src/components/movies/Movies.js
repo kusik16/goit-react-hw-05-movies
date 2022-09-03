@@ -27,6 +27,7 @@ const Movies = () => {
 		if (search) {
 			onSearchFilm(search.split('=')[1]);
 		}
+		// eslint-disable-next-line
 	}, [search]);
 
 	const goToSearch = () =>
