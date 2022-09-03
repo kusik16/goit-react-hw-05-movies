@@ -32,7 +32,7 @@ const Movies = () => {
 
 	const goToSearch = () =>
 		navigate({
-			pathname: '/movies',
+			pathname: '/goit-react-hw-05-movies/movies',
 			search: `?${createSearchParams(params)}`,
 		});
 
