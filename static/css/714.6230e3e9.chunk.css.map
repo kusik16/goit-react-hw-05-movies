@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/714.6230e3e9.chunk.css","mappings":"AAAA,iBACI,kBACJ,CAEA,uBACI,YACJ","sources":["components/cast/cast.css"],"sourcesContent":[".cats-list__item {\n    margin-bottom: 30px;\n}\n\n.cats-list__item-image {\n    height: 150px;\n}"],"names":[],"sourceRoot":""}
