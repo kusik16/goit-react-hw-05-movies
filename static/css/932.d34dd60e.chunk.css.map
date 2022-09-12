@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/932.d34dd60e.chunk.css","mappings":"AAAA,iBACI,cACJ,CAEA,qBACI,gBACJ","sources":["components/trending/trending.css"],"sourcesContent":[".trending__title {\n    font-size: 30px;\n}\n\n.trending__list-item {\n    margin-bottom: px;\n}"],"names":[],"sourceRoot":""}
