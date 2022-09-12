@@ -8,7 +8,6 @@ const useMovieService = () => {
 
 	const getTrandingToday = async () => {
 		const res = await request(`${_apiBase}trending/movie/day?${_apiKey}`);
-		console.log(res);
 		return res.results.map(_transformFilms);
 	};
 
@@ -35,7 +34,6 @@ const useMovieService = () => {
 		const res = await request(
 			`${_apiBase}movie/${movieId}/reviews?${_apiKey}`
 		);
-		console.log(res);
 		return res.results.map(_transformReviews);
 	};
 

@@ -1,13 +1,13 @@
 import { NavLink } from 'react-router-dom';
 
-import './appHeader.css'
+import appHeader from './AppHeader.module.css';
 
 const AppHeader = () => {
 	return (
-		<header className="app__header">
-			<nav className="app__menu">
-				<ul className="app__header_list">
-					<li className="app__header_list-item">
+		<header className={appHeader.header}>
+			<nav>
+				<ul className={appHeader.list}>
+					<li className={appHeader.item}>
 						<NavLink
 							style={({ isActive }) => ({
 								color: isActive ? 'red' : 'black',
@@ -17,7 +17,7 @@ const AppHeader = () => {
 							Home
 						</NavLink>
 					</li>
-					<li className="app__header_list-item">
+					<li className={appHeader.item}>
 						<NavLink
 							style={({ isActive }) => ({
 								color: isActive ? 'red' : 'black',

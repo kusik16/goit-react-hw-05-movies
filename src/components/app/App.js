@@ -16,8 +16,14 @@ const App = () => {
 				<main>
 					<Suspense fallback={<Spinner />}>
 						<Routes>
-							<Route path="/goit-react-hw-05-movies/*" element={<Trending />} />
-							<Route path="/goit-react-hw-05-movies/movies" element={<Movies />}></Route>
+							<Route
+								path="/goit-react-hw-05-movies/*"
+								element={<Trending />}
+							/>
+							<Route
+								path="/goit-react-hw-05-movies/movies"
+								element={<Movies />}
+							></Route>
 							<Route
 								path="/goit-react-hw-05-movies/movies/:movieId/*"
 								element={<MovieInfo />}

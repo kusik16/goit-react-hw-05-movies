@@ -1,34 +1,34 @@
 
-.movie-info__container {
+.container {
     border-bottom: 1px solid grey;
     margin-bottom: 15px;
     height: 450px;
     display: flex;
 }
 
-.movie-info__image {
+.image {
     float: left;
     margin-right: 15px;
     max-height: 400px;
 }
 
-.movie-info__info {
+.info {
     float: left;
     margin-right: 15px;
 }
 
-.movie-info__genres-list {
+.genresList {
 	display: flex;
     padding: 0;
 }
 
-.movie-info__genres-list__item {
+.genresItem {
 	list-style-type: none;
     padding: 0;
     margin-right: 5px;
 }
 
-.movie-info__additional {
+.additional {
     border-bottom: 1px solid grey;
     margin-bottom: 15px;
 }

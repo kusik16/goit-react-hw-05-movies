@@ -1,7 +1,7 @@
-.cats-list__item {
+.item {
     margin-bottom: 30px;
 }
 
-.cats-list__item-image {
+.image {
     height: 150px;
 }

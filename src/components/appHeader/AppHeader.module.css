@@ -1,18 +1,18 @@
-.app__header {
+.header {
     height: 50px;
     box-shadow: rgba(33, 35, 38, 0.5) 0px 10px 10px -10px;
 }
 
-.app__header_list {
+.list {
     display: flex;
     list-style-type: none;
     text-decoration: none;
 }
 
-.app__header_list-item {
+.item {
     margin-right: 20px;
 }
 
-.app__header_list > li > a {
+.item > a {
     text-decoration: none;
 }

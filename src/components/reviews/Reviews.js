@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import useMovieService from 'services/MovieService';
 
-import './reviews.css';
+import reviewsCSS from './Reviews.module.css';
 
 const Reviews = () => {
 	const [movieReviews, setMovieReviews] = useState(null);
@@ -25,7 +25,9 @@ const Reviews = () => {
 				movieReviews.map(Reviews => {
 					return (
 						<li key={Reviews.id}>
-							<div className='reviews__author'>Author: {Reviews.author}</div>
+							<div className={reviewsCSS.author}>
+								Author: {Reviews.author}
+							</div>
 							<p>{Reviews.content}</p>
 						</li>
 					);

@@ -3,7 +3,7 @@ import { Link, useParams, Route, Routes, useNavigate } from 'react-router-dom';
 
 import useMovieService from 'services/MovieService';
 
-import './movieInfo.css';
+import movieInfoCSS from './MovieInfo.module.css';
 
 const Cast = lazy(() => import('../cast/Cast'));
 const Reviews = lazy(() => import('../reviews/Reviews'));
@@ -29,13 +29,13 @@ const MovieInfo = () => {
 			{movieInfo ? (
 				<div>
 					<button onClick={() => navigate(-1)}>go back</button>
-					<div className="movie-info__container">
+					<div className={movieInfoCSS.container}>
 						<img
-							className="movie-info__image"
+							className={movieInfoCSS.image}
 							src={`https://image.tmdb.org/t/p/w200/${movieInfo.poster_path}`}
 							alt="poster"
 						/>
-						<div className="movie-info__info">
+						<div className={movieInfoCSS.info}>
 							<h1>{movieInfo.title}</h1>
 							<div>
 								User score: {Math.floor(movieInfo.popularity)}%
@@ -43,11 +43,11 @@ const MovieInfo = () => {
 							<h2>Overview</h2>
 							<p>{movieInfo.overview}</p>
 							<h3>Genres</h3>
-							<ul className="movie-info__genres-list">
+							<ul className={movieInfoCSS.genresList}>
 								{movieInfo.genres.map(genre => {
 									return (
 										<li
-											className="movie-info__genres-list__item"
+											className={movieInfoCSS.genresItem}
 											key={genre.id}
 										>
 											{genre.name}
@@ -57,7 +57,7 @@ const MovieInfo = () => {
 							</ul>
 						</div>
 					</div>
-					<div className="movie-info__additional">
+					<div className={movieInfoCSS.additional}>
 						<div>Additional information</div>
 						<ul>
 							<li>

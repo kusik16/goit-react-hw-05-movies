@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import useMovieService from 'services/MovieService';
 
-import './trending.css';
+import trending from './Trending.module.css';
 
 const Trending = () => {
 	const [trendingList, setTrendingList] = useState([]);
@@ -19,11 +19,11 @@ const Trending = () => {
 
 	return (
 		<>
-			<h1 className='trending__title' >Trending today</h1>
+			<h1 className={trending.title}>Trending today</h1>
 			<ul>
 				{trendingList.map(item => {
 					return (
-						<li className='trending__list-item' key={item.id}>
+						<li className={trending.item} key={item.id}>
 							<Link to={`movies/${item.id}`}>{item.title}</Link>
 						</li>
 					);
