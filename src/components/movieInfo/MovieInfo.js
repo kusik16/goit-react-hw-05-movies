@@ -21,12 +21,11 @@ const MovieInfo = () => {
 		getMovieDetails(movieId).then(res => {
 			setMovieInfo(res);
 		});
-		// eslint-disable-next-line
-	}, []);
+	}, [getMovieDetails, movieId]);
 
 	return (
 		<>
-			{movieInfo ? (
+			{movieInfo && (
 				<div>
 					<button onClick={() => navigate(-1)}>go back</button>
 					<div className={movieInfoCSS.container}>
@@ -73,7 +72,7 @@ const MovieInfo = () => {
 						<Route path="reviews" element={<Reviews />} />
 					</Routes>
 				</div>
-			) : null}
+			)}
 		</>
 	);
 };

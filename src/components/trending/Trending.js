@@ -14,8 +14,7 @@ const Trending = () => {
 		getTrandingToday()
 			.then(res => setTrendingList(res))
 			.then(() => setProcess('confirmed'));
-		// eslint-disable-next-line
-	}, []);
+	}, [getTrandingToday, setProcess]);
 
 	return (
 		<>

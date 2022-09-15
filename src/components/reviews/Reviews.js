@@ -16,8 +16,7 @@ const Reviews = () => {
 		getMovieReviews(movieId).then(res => {
 			setMovieReviews(res);
 		});
-		// eslint-disable-next-line
-	}, []);
+	}, [getMovieReviews, movieId]);
 
 	return (
 		<ul>
