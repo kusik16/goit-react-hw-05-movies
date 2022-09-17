@@ -16,8 +16,10 @@ const Cast = () => {
 		getMovieCredits(movieId).then(res => {
 			setMovieCast(res);
 		});
-	}, [getMovieCredits, movieId]);
+		// eslint-disable-next-line
+	}, []);
 
+		console.log('render cast');
 	return (
 		<ul>
 			{movieCast &&

@@ -1,12 +1,8 @@
-import { useState, useEffect, lazy } from 'react';
-import { Link, useParams, Route, Routes, useNavigate } from 'react-router-dom';
-
+import { useState, useEffect, Suspense } from 'react';
+import { Link, useParams, useLocation, Outlet } from 'react-router-dom';
 import useMovieService from 'services/MovieService';
-
 import movieInfoCSS from './MovieInfo.module.css';
-
-const Cast = lazy(() => import('../cast/Cast'));
-const Reviews = lazy(() => import('../reviews/Reviews'));
+import Spinner from '../spinner/Spinner';
 
 const MovieInfo = () => {
 	const [movieInfo, setMovieInfo] = useState(null);
@@ -15,19 +11,27 @@ const MovieInfo = () => {
 
 	const { movieId } = useParams();
 
-	const navigate = useNavigate();
+	const location = useLocation();
 
 	useEffect(() => {
 		getMovieDetails(movieId).then(res => {
 			setMovieInfo(res);
 		});
-	}, [getMovieDetails, movieId]);
+		// eslint-disable-next-line
+	}, []);
 
 	return (
 		<>
 			{movieInfo && (
 				<div>
-					<button onClick={() => navigate(-1)}>go back</button>
+					<Link
+						to={
+							location.state?.from ??
+							'/goit-react-hw-05-movies/movies'
+						}
+					>
+						go back
+					</Link>
 					<div className={movieInfoCSS.container}>
 						<img
 							className={movieInfoCSS.image}
@@ -60,17 +64,30 @@ const MovieInfo = () => {
 						<div>Additional information</div>
 						<ul>
 							<li>
-								<Link to="cast">Cast</Link>
+								<Link
+									to="cast"
+									state={{
+										from: location.state?.from ?? '/movies',
+									}}
+								>
+									Cast
+								</Link>
 							</li>
 							<li>
-								<Link to="reviews">Reviews</Link>
+								<Link
+									to="reviews"
+									state={{
+										from: location.state?.from ?? '/movies',
+									}}
+								>
+									Reviews
+								</Link>
 							</li>
 						</ul>
 					</div>
-					<Routes>
-						<Route path="cast" element={<Cast />} />
-						<Route path="reviews" element={<Reviews />} />
-					</Routes>
+					<Suspense fallback={<Spinner />}>
+						<Outlet />
+					</Suspense>
 				</div>
 			)}
 		</>

@@ -1,50 +1,42 @@
 import { useState, useEffect } from 'react';
-import {
-	Link,
-	useNavigate,
-	createSearchParams,
-	useLocation,
-} from 'react-router-dom';
+import { Link, useSearchParams, useLocation } from 'react-router-dom';
 
 import useMovieService from 'services/MovieService';
 
 const Movies = () => {
-	const [searchText, setSearchText] = useState('');
+	const location = useLocation();
 	const [moviesArray, setMoviesArray] = useState([]);
+	const [searchParams, setSearchParams] = useSearchParams();
+	const searchText = searchParams.get('query');
 
 	const { searchFilmByName } = useMovieService();
-
-	const navigate = useNavigate();
-	const params = { query: searchText };
-
-	const { search } = useLocation();
 
 	const onSearchFilm = name => {
 		searchFilmByName(name).then(res => setMoviesArray(res));
 	};
 
+	const changeQuery = e => {
+		setSearchParams(e.target.value !== '' ? { query: e.target.value } : {});
+	};
+
 	useEffect(() => {
-		if (search) {
-			onSearchFilm(search.split('=')[1]);
+		if (searchText) {
+			onSearchFilm(searchText);
 		}
 		// eslint-disable-next-line
-	}, [search]);
-
-	const goToSearch = () =>
-		navigate({
-			pathname: '/goit-react-hw-05-movies/movies',
-			search: `?${createSearchParams(params)}`,
-		});
+	}, []);
 
 	return (
 		<>
-			<input onChange={e => setSearchText(e.target.value)} type="text" />
-			<button onClick={goToSearch}>search</button>
+			<input onChange={e => changeQuery(e)} type="text" />
+			<button onClick={() => onSearchFilm(searchText)}>search</button>
 			<ul>
 				{moviesArray.map(item => {
 					return (
 						<li key={item.id}>
-							<Link to={`${item.id}`}>{item.title}</Link>
+							<Link to={`${item.id}`} state={{ from: location }}>
+								{item.title}
+							</Link>
 						</li>
 					);
 				})}

@@ -7,6 +7,8 @@ import Spinner from '../spinner/Spinner';
 const Trending = lazy(() => import('../trending/Trending'));
 const Movies = lazy(() => import('../movies/Movies'));
 const MovieInfo = lazy(() => import('../movieInfo/MovieInfo'));
+const Cast = lazy(() => import('../cast/Cast'));
+const Reviews = lazy(() => import('../reviews/Reviews'));
 
 const App = () => {
 	return (
@@ -15,19 +17,16 @@ const App = () => {
 				<AppHeader />
 				<main>
 					<Suspense fallback={<Spinner />}>
-						<Routes>
+						<Routes basename="/goit-react-hw-05-movies/">
+							<Route path="/" index element={<Trending />} />
+							<Route path="movies" element={<Movies />} />
 							<Route
-								path="/goit-react-hw-05-movies/*"
-								element={<Trending />}
-							/>
-							<Route
-								path="/goit-react-hw-05-movies/movies"
-								element={<Movies />}
-							></Route>
-							<Route
-								path="/goit-react-hw-05-movies/movies/:movieId/*"
+								path="movies/:movieId"
 								element={<MovieInfo />}
-							></Route>
+							>
+								<Route path="cast" element={<Cast />} />
+								<Route path="reviews" element={<Reviews />} />
+							</Route>
 						</Routes>
 					</Suspense>
 				</main>

@@ -12,7 +12,7 @@ const AppHeader = () => {
 							style={({ isActive }) => ({
 								color: isActive ? 'red' : 'black',
 							})}
-							to="/goit-react-hw-05-movies/"
+							to="/"
 						>
 							Home
 						</NavLink>
@@ -22,7 +22,7 @@ const AppHeader = () => {
 							style={({ isActive }) => ({
 								color: isActive ? 'red' : 'black',
 							})}
-							to="/goit-react-hw-05-movies/movies"
+							to="/movies"
 						>
 							Movies
 						</NavLink>

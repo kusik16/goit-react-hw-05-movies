@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import useMovieService from 'services/MovieService';
 
@@ -7,14 +7,15 @@ import trending from './Trending.module.css';
 
 const Trending = () => {
 	const [trendingList, setTrendingList] = useState([]);
-
+	const location = useLocation();
 	const { getTrandingToday, setProcess } = useMovieService();
 
 	useEffect(() => {
 		getTrandingToday()
 			.then(res => setTrendingList(res))
 			.then(() => setProcess('confirmed'));
-	}, [getTrandingToday, setProcess]);
+		// eslint-disable-next-line
+	}, []);
 
 	return (
 		<>
@@ -23,7 +24,12 @@ const Trending = () => {
 				{trendingList.map(item => {
 					return (
 						<li className={trending.item} key={item.id}>
-							<Link to={`movies/${item.id}`}>{item.title}</Link>
+							<Link
+								to={`movies/${item.id}`}
+								state={{ from: location }}
+							>
+								{item.title}
+							</Link>
 						</li>
 					);
 				})}
