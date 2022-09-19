@@ -18,7 +18,7 @@ const App = () => {
 				<main>
 					<Suspense fallback={<Spinner />}>
 						<Routes basename="/goit-react-hw-05-movies/">
-							<Route path="/" index element={<Trending />} />
+							<Route path="/*" element={<Trending />} />
 							<Route path="movies" element={<Movies />} />
 							<Route
 								path="movies/:movieId"
