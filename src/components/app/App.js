@@ -4,11 +4,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AppHeader from '../appHeader/AppHeader';
 import Spinner from '../spinner/Spinner';
 
-const Trending = lazy(() => import('../trending/Trending'));
-const Movies = lazy(() => import('../movies/Movies'));
-const MovieInfo = lazy(() => import('../movieInfo/MovieInfo'));
-const Cast = lazy(() => import('../cast/Cast'));
-const Reviews = lazy(() => import('../reviews/Reviews'));
+const Trending = lazy(() => import('../pages/trending/Trending'));
+const Movies = lazy(() => import('../pages/movies/Movies'));
+const MovieInfo = lazy(() => import('../pages/movieInfo/MovieInfo'));
+const Cast = lazy(() => import('../pages/cast/Cast'));
+const Reviews = lazy(() => import('../pages/reviews/Reviews'));
 
 const App = () => {
 	return (

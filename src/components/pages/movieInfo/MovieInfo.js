@@ -2,7 +2,7 @@ import { useState, useEffect, Suspense } from 'react';
 import { Link, useParams, useLocation, Outlet } from 'react-router-dom';
 import useMovieService from 'services/MovieService';
 import movieInfoCSS from './MovieInfo.module.css';
-import Spinner from '../spinner/Spinner';
+import Spinner from '../../spinner/Spinner';
 
 const MovieInfo = () => {
 	const [movieInfo, setMovieInfo] = useState(null);
