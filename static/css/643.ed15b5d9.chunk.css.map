@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/643.ed15b5d9.chunk.css","mappings":"AAAA,wBACC,cACD,CAEA,sBACC,gBACD","sources":["components/pages/trending/Trending.module.css"],"sourcesContent":[".title {\n\tfont-size: 30px;\n}\n\n.item {\n\tmargin-bottom: px;\n}\n"],"names":[],"sourceRoot":""}
