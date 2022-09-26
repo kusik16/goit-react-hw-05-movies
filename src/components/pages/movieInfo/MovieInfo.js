@@ -27,7 +27,7 @@ const MovieInfo = () => {
 					<Link
 						to={
 							location.state?.from ??
-							'/goit-react-hw-05-movies/movies'
+							'/movies'
 						}
 					>
 						go back

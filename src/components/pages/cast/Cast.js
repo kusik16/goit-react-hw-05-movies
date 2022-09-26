@@ -19,7 +19,6 @@ const Cast = () => {
 		// eslint-disable-next-line
 	}, []);
 
-		console.log('render cast');
 	return (
 		<ul>
 			{movieCast &&
