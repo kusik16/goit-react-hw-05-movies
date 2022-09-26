@@ -12,12 +12,12 @@ const Reviews = lazy(() => import('../pages/reviews/Reviews'));
 
 const App = () => {
 	return (
-		<Router>
+		<Router basename="/goit-react-hw-05-movies/">
 			<div className="app">
 				<AppHeader />
 				<main>
 					<Suspense fallback={<Spinner />}>
-						<Routes basename="/goit-react-hw-05-movies/">
+						<Routes>
 							<Route path="/*" element={<Trending />} />
 							<Route path="movies" element={<Movies />} />
 							<Route
